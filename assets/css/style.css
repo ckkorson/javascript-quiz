@@ -1,16 +1,46 @@
-header {
-    display: flex;
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.high-scores {
+header {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#high-scores {
     width: 50%;
     text-align: left;
     padding-left: 20px;
     color: purple;
 }
 
-.time {
+#time {
     width: 50%;
     text-align: right;
     padding-right: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+}
+
+#main-header {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+
+#main-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    
 }
