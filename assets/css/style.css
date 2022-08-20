@@ -28,12 +28,17 @@ main {
     margin-left: 10%;
     margin-right: 10%;
     align-items: center;
+    background-color: wheat;
+    border: purple solid 5px;
+    border-radius: 5px;
+    box-shadow: 5px 5px gray;
 }
 
 #main-header {
     text-align: center;
     font-size: larger;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 #main-text {
@@ -41,19 +46,65 @@ main {
     margin-bottom: 20px;
 }
 
-.button {
+.all-button {
     height: 40px;
     width: 120px;
     background-color: purple;
     color: white;
     border-radius: 5px;
     font-size: larger;
+    margin-bottom: 20px;
 }
 
-.button:hover {
+/* #button2 {
+    height: 40px;
+    width: 120px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+
+#button3 {
+    height: 40px;
+    width: 120px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+
+#button4 {
+    height: 40px;
+    width: 120px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    font-size: larger;
+    margin-bottom: 20px;
+} */
+
+.all-button:hover {
     background-color: plum;
     cursor: grab;
 }
+
+/* #button2:hover {
+    background-color: plum;
+    cursor: grab;
+}
+
+#button3:hover {
+    background-color: plum;
+    cursor: grab;
+}
+
+#button4:hover {
+    background-color: plum;
+    cursor: grab;
+} */
 
 #high-scores:hover {
     color: plum;
