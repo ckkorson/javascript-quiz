@@ -41,6 +41,21 @@ main {
     margin-bottom: 20px;
 }
 
-#start-button {
-    
+.button {
+    height: 40px;
+    width: 120px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+.button:hover {
+    background-color: plum;
+    cursor: grab;
+}
+
+#high-scores:hover {
+    color: plum;
+    cursor: grab;
 }
