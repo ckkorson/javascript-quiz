@@ -3,13 +3,17 @@ let button1 = document.querySelector("#button1")
 let main = document.querySelector("main")
 let questionNumber = document.querySelector("#main-header")
 let questionText = document.querySelector("#main-text")
+let timer = document.querySelector("#time-left")
+let viewHighScore = document.querySelector("#high-score")
 let button2 = document.createElement("button")
 let button3 = document.createElement("button")
 let button4 = document.createElement("button")
-let intialForm = document.createElement("form")
+document.getElementById("initial-form").style.display = "none"
+// let intialForm = document.createElement("form")
 let rightAnswer = 0
 let wrongAnswer = 0
 let gameStart = 0
+let timeLeft = 0
 
 let x = 0
 
@@ -23,6 +27,22 @@ let questions = {
     optionD: ["Brewer","||",".appendChild"],
     correct: ["Caleb","[]",".setAttribute"],
 }
+
+function countdown() {
+    timeLeft = 10
+    timer.innerHTML = timeLeft
+    let timeInterval = setInterval(function(){
+      timeLeft--
+      timer.innerHTML = timeLeft
+      if (timeLeft == 0) {
+        clearInterval(timeInterval)
+        gameOver()
+      }
+      else if (gameStart == 2) {
+        clearInterval(timeInterval)
+      }
+    },1000)
+  }
 
 function addQuestions() {
     main.appendChild(button2)
@@ -41,7 +61,6 @@ function addQuestions() {
     button3.innerHTML = questions.optionC[x]
     button4.innerHTML = questions.optionD[x]
     gameStart++
-    console.log(gameStart)
     x++
 }
 
@@ -62,7 +81,7 @@ function gameOver() {
     questionNumber.innerHTML = "Quiz is complete."
     questionText.innerHTML = "Press the next button below to see your score."
     button1.innerHTML = "Next"
-    gameStart++
+    gameStart = 2
 }
 
 function showScore() {
@@ -72,17 +91,20 @@ function showScore() {
     if (localStorage.getItem("highScore") <= rightAnswer) {
         localStorage.setItem("highScore",rightAnswer)
     }
-    // main.appendChild(intialForm)
+    document.getElementById("initial-form").style.display = "flex"
     gameStart++
 }
 
 function resetQuiz() {
+    console.log(document.getElementById("input-text").value)
+    document.getElementById("initial-form").style.display = "none"
     questionNumber.innerHTML = "Coding Quiz Challenge"
     questionText.innerHTML = "Try to answer the following coding questions within the time limit. When you are done you can record you initials with your score."
     button1.innerHTML = "Start Quiz"
     x = 0
     rightAnswer = 0
     gameStart = 0
+    timer.innerHTML = 0
 }
 
 button1.addEventListener("click", function() {
@@ -94,6 +116,7 @@ button1.addEventListener("click", function() {
     }
     else if (gameStart == 0) {
         addQuestions()
+        countdown()
     }
     else if (x == questions.qNum.length) {
         x--
@@ -173,4 +196,12 @@ button4.addEventListener("click", function() {
         console.log(rightAnswer)
         newQuestions()
     }
+})
+
+viewHighScore.addEventListener("click", function() {
+    questionNumber.innerHTML = "Current High Score"
+    questionText.innerHTML = (localStorage.getItem("highScore") + " out of " + questions.qNum.length +
+    " by ")
+    button1.innerHTML = "Back"
+    gameStart = 3
 })

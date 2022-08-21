@@ -8,7 +8,7 @@ header {
     margin-bottom: 50px;
 }
 
-#high-scores {
+#high-score {
     width: 50%;
     text-align: left;
     padding-left: 20px;
@@ -56,57 +56,20 @@ main {
     margin-bottom: 20px;
 }
 
-/* #button2 {
-    height: 40px;
-    width: 120px;
-    background-color: purple;
-    color: white;
-    border-radius: 5px;
-    font-size: larger;
+#initial-form {
     margin-bottom: 20px;
 }
 
-#button3 {
-    height: 40px;
-    width: 120px;
-    background-color: purple;
-    color: white;
-    border-radius: 5px;
-    font-size: larger;
-    margin-bottom: 20px;
+#form-label {
+    margin-right: 5px;
 }
-
-#button4 {
-    height: 40px;
-    width: 120px;
-    background-color: purple;
-    color: white;
-    border-radius: 5px;
-    font-size: larger;
-    margin-bottom: 20px;
-} */
 
 .all-button:hover {
     background-color: plum;
     cursor: grab;
 }
 
-/* #button2:hover {
-    background-color: plum;
-    cursor: grab;
-}
-
-#button3:hover {
-    background-color: plum;
-    cursor: grab;
-}
-
-#button4:hover {
-    background-color: plum;
-    cursor: grab;
-} */
-
-#high-scores:hover {
+#high-score:hover {
     color: plum;
     cursor: grab;
 }
