@@ -45,6 +45,7 @@ function countdown() {
   }
 
 function addQuestions() {
+    viewHighScore.style.display = "none"
     main.appendChild(button2)
     main.appendChild(button3)
     main.appendChild(button4)
@@ -88,15 +89,20 @@ function showScore() {
     questionNumber.innerHTML = ("Your Score is: " + rightAnswer + " out of " + questions.qNum.length)
     questionText.innerHTML = "Enter your initials in textbox below to record you score, then press submit"
     button1.innerHTML = "Submit"
-    if (localStorage.getItem("highScore") <= rightAnswer) {
-        localStorage.setItem("highScore",rightAnswer)
-    }
+    // if (localStorage.getItem("highScore") <= rightAnswer) {
+    //     localStorage.setItem("highScore",rightAnswer)
+    // }
     document.getElementById("initial-form").style.display = "flex"
     gameStart++
 }
 
 function resetQuiz() {
-    console.log(document.getElementById("input-text").value)
+    if (localStorage.getItem("highScore") <= rightAnswer) {
+        localStorage.setItem("highScore",rightAnswer)
+        localStorage.setItem("initial",document.getElementById("input-text").value)
+    }
+    viewHighScore.style.display = "flex"
+    document.getElementById("input-text").value
     document.getElementById("initial-form").style.display = "none"
     questionNumber.innerHTML = "Coding Quiz Challenge"
     questionText.innerHTML = "Try to answer the following coding questions within the time limit. When you are done you can record you initials with your score."
@@ -105,6 +111,7 @@ function resetQuiz() {
     rightAnswer = 0
     gameStart = 0
     timer.innerHTML = 0
+    document.getElementById("input-text").value = ""
 }
 
 button1.addEventListener("click", function() {
@@ -201,7 +208,7 @@ button4.addEventListener("click", function() {
 viewHighScore.addEventListener("click", function() {
     questionNumber.innerHTML = "Current High Score"
     questionText.innerHTML = (localStorage.getItem("highScore") + " out of " + questions.qNum.length +
-    " by ")
+    " by " + localStorage.getItem("initial"))
     button1.innerHTML = "Back"
     gameStart = 3
 })
