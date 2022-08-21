@@ -6,6 +6,7 @@ let questionText = document.querySelector("#main-text")
 let button2 = document.createElement("button")
 let button3 = document.createElement("button")
 let button4 = document.createElement("button")
+let intialForm = document.createElement("form")
 let rightAnswer = 0
 let wrongAnswer = 0
 let gameStart = 0
@@ -24,7 +25,6 @@ let questions = {
 }
 
 function addQuestions() {
-    gameStart = true
     main.appendChild(button2)
     main.appendChild(button3)
     main.appendChild(button4)
@@ -41,6 +41,7 @@ function addQuestions() {
     button3.innerHTML = questions.optionC[x]
     button4.innerHTML = questions.optionD[x]
     gameStart++
+    console.log(gameStart)
     x++
 }
 
@@ -66,6 +67,10 @@ function gameOver() {
 
 function showScore() {
     questionNumber.innerHTML = ("Your Score is: " + rightAnswer + " out of " + questions.qNum.length)
+    questionText.innerHTML = "Enter your initials in textbox below to record you score, then press submit"
+    button1.innerHTML = "Submit"
+    // main.appendChild(intialForm)
+    gameStart++
 }
 
 button1.addEventListener("click", function() {
