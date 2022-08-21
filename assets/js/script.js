@@ -69,13 +69,28 @@ function showScore() {
     questionNumber.innerHTML = ("Your Score is: " + rightAnswer + " out of " + questions.qNum.length)
     questionText.innerHTML = "Enter your initials in textbox below to record you score, then press submit"
     button1.innerHTML = "Submit"
+    if (localStorage.getItem("highScore") <= rightAnswer) {
+        localStorage.setItem("highScore",rightAnswer)
+    }
     // main.appendChild(intialForm)
     gameStart++
+}
+
+function resetQuiz() {
+    questionNumber.innerHTML = "Coding Quiz Challenge"
+    questionText.innerHTML = "Try to answer the following coding questions within the time limit. When you are done you can record you initials with your score."
+    button1.innerHTML = "Start Quiz"
+    x = 0
+    rightAnswer = 0
+    gameStart = 0
 }
 
 button1.addEventListener("click", function() {
     if (gameStart == 2) {
         showScore()
+    }
+    else if (gameStart == 3) {
+        resetQuiz()
     }
     else if (gameStart == 0) {
         addQuestions()
