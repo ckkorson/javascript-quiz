@@ -1,26 +1,27 @@
+/* set font style for the page */
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+/* formats the page header */
 header {
     display: flex;
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
+/* formats view high score text */
 #high-score {
     width: 50%;
     text-align: left;
     padding-left: 20px;
     color: purple;
 }
-
+/* formats timer text */
 #time {
     width: 50%;
     text-align: right;
     padding-right: 20px;
 }
-
+/* formats main area of page */
 main {
     display: flex;
     flex-direction: column;
@@ -33,19 +34,19 @@ main {
     border-radius: 5px;
     box-shadow: 5px 5px gray;
 }
-
+/* formats the header of main */
 #main-header {
     text-align: center;
     font-size: larger;
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
+/* formats the text in main */
 #main-text {
     text-align: center;
     margin-bottom: 20px;
 }
-
+/* class to format all buttons */
 .all-button {
     height: 40px;
     width: 120px;
@@ -55,20 +56,20 @@ main {
     font-size: larger;
     margin-bottom: 20px;
 }
-
+ /* format the form */
 #initial-form {
     margin-bottom: 20px;
 }
-
+/* format the form label */
 #form-label {
     margin-right: 5px;
 }
-
+/* change color when hovering over buttons */
 .all-button:hover {
     background-color: plum;
     cursor: grab;
 }
-
+/* change color when hovering of view high score text */
 #high-score:hover {
     color: plum;
     cursor: grab;
