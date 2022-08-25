@@ -21,20 +21,20 @@ document.getElementById("initial-form").style.display = "none"
 // create object for the quiz questions
 // object includes question #, question, 4 different answers, and the correct answer
 let questions = {
-    qNum: [1,2,3],
+    qNum: [1,2,3,4],
     qText: ["Who is the best coder?","What do you use to declare arrays?",
-    "What do you use to give an element an attribute with Javascript?"],
-    optionA: ["Caleb","()",".querySelector"],
-    optionB: ["Emily","{}",".setAttribute"],
-    optionC: ["Atlas","[]",".createElement"],
-    optionD: ["Brewer","||",".appendChild"],
-    correct: ["Caleb","[]",".setAttribute"],
+    "What do you use to give an element an attribute with Javascript?", "How do you clear a time interval?"],
+    optionA: ["Caleb","()",".querySelector","resetInterval()"],
+    optionB: ["Emily","{}",".setAttribute","pray()"],
+    optionC: ["Atlas","[]",".createElement","addEventListener()"],
+    optionD: ["Brewer","||",".appendChild","clearInterval()"],
+    correct: ["Caleb","[]",".setAttribute","clearInterval()"],
 }
 // creates the timer countdown function
-// countdown starts and 10 seconds and counts down in 1 second intervals
+// countdown starts and 15 seconds and counts down in 1 second intervals
 // timeInterval is cleared either by answering all question or running out of time
 function countdown() {
-    timeLeft = 10
+    timeLeft = 15
     timer.innerHTML = timeLeft
     let timeInterval = setInterval(function(){
       timeLeft--
